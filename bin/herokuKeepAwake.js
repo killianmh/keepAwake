@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 // pings listed DYNO_URLS every 'interval' minutes (default 
 // is 25 minutes since heroku apps sleep after 30 minutes of non-use)
 
-const hours = 0.1
+const hours = 14
 const start = Date.now();
 const end = start + (hours * 60 * 60 * 1000)
 
@@ -13,7 +13,7 @@ const DYNO_URLS = [
     "https://killian-yummy.herokuapp.com/",
 ]
 
-const interval = 0.5
+const interval = 25
 
 const timeouts = []
 
