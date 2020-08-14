@@ -25,11 +25,16 @@ const keepAwake = (urls, interval= 25) => {
       timeouts.push(
         setTimeout(() => {
           try {
-            fetch(url).then(() => console.log(`Pinging ${url}`)); 
+            fetch(url)
+              .then(() => console.log(`Pinging ${url}`))
+              .catch(err => {
+                throw new Error(err)
+              }) 
           } catch (error) {
-            console.log('Error pinging ' + url + ' .Will try again in ' + interval + ' minutes.')
+              console.log(error)
+              console.log('Error pinging ' + url + '. Will try again in ' + interval + ' minutes.')
           } finally {
-            return keepAwake(urls, interval);
+              return keepAwake(urls, interval);
           }
         }, milliseconds)
       )
