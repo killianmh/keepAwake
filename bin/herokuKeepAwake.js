@@ -12,7 +12,8 @@ const start = Date.now();
 const end = start + (hours * 60 * 60 * 1000)
 
 const DYNO_URLS = [
-    "https://killian-yummy.herokuapp.com/",
+    "https://matt-killian.herokuapp.com/",
+    "https://frombluetogreen.herokuapp.com/"
 ]
 
 const interval = 25
